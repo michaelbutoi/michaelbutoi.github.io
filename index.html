@@ -3,14 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Michael Butoi | Information Systems &amp; Agri-Tech</title>
-<meta name="description" content="Michael Butoi: Information Systems honours student at the University of Pretoria, building software for dairy and farming. Looking for junior software and data roles in agri-tech for 2027.">
+<title>Michael Butoi, software for farms</title>
+<meta name="description" content="Michael Butoi is an Information Systems Honours student at the University of Pretoria who builds software for dairy and farm decisions. Looking for a junior software or data role in agri-tech from 2027.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
-<header class="top">
-  <a class="brand" href="#top">Michael Butoi</a>
-  <nav>
+
+<header class="bar">
+  <a class="name" href="#top">Michael Butoi</a>
+  <nav aria-label="Main">
     <a href="#projects">Projects</a>
     <a href="#farm">Farm work</a>
     <a href="#study">Studies</a>
@@ -19,80 +24,142 @@
 </header>
 
 <main id="top">
+
   <section class="hero">
-    <img class="portrait" src="michael.jpg" alt="Michael Butoi" width="180" height="180">
-    <p class="tag">Open to relocating for 2027</p>
-    <h1>Software for the people who work the land.</h1>
-    <p class="lead">I'm an Information Systems student at the University of Pretoria, finishing my Honours in November 2026. I grew up around dairy farming in the Eastern Cape, and I build tools that turn farm numbers into decisions: which cow to check, whether there's enough grass.</p>
-    <p class="cta">
-      <a class="btn" href="#projects">See my projects</a>
-      <a class="btn ghost" href="#contact">Get in touch</a>
-    </p>
+    <div class="hero-text">
+      <h1>Tools that tell a farmer which cow to check and whether the grass will last.</h1>
+      <p class="intro">I'm Michael Butoi, an Information Systems Honours student at the University of Pretoria. I'm looking for a junior software or data role in agri-tech from 2027, and I'm ready to relocate.</p>
+      <p class="actions"><a class="primary" href="#projects">See my projects</a><a class="plain" href="#contact">Get in touch</a></p>
+    </div>
+
+    <figure class="field" aria-hidden="true">
+      <div class="paddock">
+        <div class="crop">
+          <div class="rot"></div>
+          <span class="hub"></span>
+        </div>
+      </div>
+      <figcaption>A centre-pivot field from above. The arm turns, the ground behind it is watered.</figcaption>
+    </figure>
+  </section>
+
+  <section class="about" aria-label="About">
+    <img src="michael.jpg" alt="Michael Butoi standing in a field at sunset" width="800" height="1067">
+    <div>
+      <p>I grew up in the Eastern Cape and worked on a dairy farm in Tsitsikamma between 2023 and 2026. That's where the problems in my projects come from: a spreadsheet I kept by hand, and a herd that was eating faster than the grass grew.</p>
+      <p>I'm fluent in English and Afrikaans, hold a South African passport, and would need a work visa sponsored.</p>
+    </div>
   </section>
 
   <section id="projects">
     <h2>Projects</h2>
-    <div class="cards">
-      <article class="card">
-        <h3>Milk Yield Tracker API</h3>
-        <p class="meta">C# · .NET 10 · EF Core · SQL Server · xUnit</p>
-        <p>A rebuild of the Excel milk tracker I made on the farm in 2024. It flags a cow when her day total is more than 15% below her own average of the previous 7 complete days, so a sick or stressed cow is spotted early.</p>
-        <p>25 automated tests cover the rule and the API end to end. The herd in the demo is made up.</p>
+
+    <article class="project">
+      <div class="p-head">
+        <h3>Milk Yield Tracker</h3>
+        <p class="stack">C#, .NET 10, EF Core, SQL Server, xUnit</p>
         <p class="links"><a href="https://github.com/michaelbutoi/milk-yield-tracker">Code on GitHub</a></p>
-      </article>
-      <article class="card">
+      </div>
+      <div class="p-body">
+        <p>A rebuild of the Excel milk tracker I made on the farm in 2024. A cow is flagged when her day total falls more than 15% below her own average of the previous seven complete days, so a sick or stressed cow gets noticed the same day.</p>
+        <p>An API with 25 automated tests covering the rule and the full request cycle. The herd in the demo is made up.</p>
+        <figure class="chart" data-draw>
+          <svg viewBox="0 0 320 150" role="img" aria-label="Line chart: a cow gives about 24 litres a day for seven days, then 18 on day eight, which drops below the flag line.">
+            <line class="flagline" x1="8" x2="312" y1="79.7" y2="79.7"/>
+            <text x="312" y="94" text-anchor="end" class="lbl">flag line, 15% under her average</text>
+            <polyline class="draw ink" pathLength="1" points="12,48.7 54.3,39.5 96.6,53.3 138.9,44.1 181.1,39.5 223.4,48.7 265.7,50.5 308,105"/>
+            <circle class="dot" cx="308" cy="105" r="5.5"/>
+            <text x="12" y="140" class="lbl">day 1</text>
+            <text x="308" y="140" text-anchor="end" class="lbl">day 8</text>
+          </svg>
+          <figcaption>Made-up cow. Her average is 24.3 kg, so the line sits at 20.6 kg and day eight's 18 kg is flagged.</figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="p-head">
         <h3>Feed vs Grass Balance Calculator</h3>
-        <p class="meta">TypeScript · Vite · Vitest · GitHub Pages</p>
-        <p>Enter cows, hectares, intake and grass growth, and it shows week by week whether pasture covers what the herd eats, and when you're heading for a feed shortfall.</p>
-        <p>The weekly maths is in one tested file (16 tests). Example numbers are made up, and it is not farm advice.</p>
-        <p class="links"><a href="https://michaelbutoi.github.io/feed-grass-balance/">Live demo</a> <a href="https://github.com/michaelbutoi/feed-grass-balance">Code on GitHub</a></p>
-      </article>
-    </div>
-    <p class="note"><strong>How these were built:</strong> I chose the problems and the rules (the 15% and 7-day thresholds, SQL Server). AI wrote most of the code and tests. I went through the core rule in each project, broke it on purpose to see which test failed, and wrote a boundary test myself. Both READMEs say this too.</p>
+        <p class="stack">TypeScript, Vite, Vitest, GitHub Pages</p>
+        <p class="links"><a href="https://michaelbutoi.github.io/feed-grass-balance/">Live demo</a><a href="https://github.com/michaelbutoi/feed-grass-balance">Code on GitHub</a></p>
+      </div>
+      <div class="p-body">
+        <p>Enter cows, hectares, intake and grass growth, and it shows week by week whether the pasture covers what the herd eats, and when you're heading for a feed shortfall.</p>
+        <p>The weekly maths lives in one file with 16 tests. The example numbers are made up, and it isn't farm advice.</p>
+        <figure class="chart" data-draw>
+          <svg viewBox="0 0 320 150" role="img" aria-label="Line chart: weekly feed demand stays flat while grass supply falls below it around week four.">
+            <line class="demand" x1="12" x2="308" y1="65.2" y2="65.2"/>
+            <text x="308" y="57" text-anchor="end" class="lbl">what the herd eats</text>
+            <polyline class="draw ink" pathLength="1" points="12,26.7 54.3,37.7 96.6,50.5 138.9,63.3 181.1,76.2 223.4,89 265.7,100 308,111"/>
+            <text x="308" y="128" text-anchor="end" class="lbl">what the grass grows</text>
+            <circle class="dot" cx="145" cy="65.2" r="5.5"/>
+            <text x="12" y="146" class="lbl">week 1</text>
+            <text x="308" y="146" text-anchor="end" class="lbl">week 8</text>
+          </svg>
+          <figcaption>Made-up autumn. Growth slows, and the red dot is where supply drops under demand.</figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <p class="honest">How they were built: I chose the problems and the rules, including the 15% and seven-day thresholds and SQL Server. AI wrote most of the code and tests. In each project I read through the core rule, broke it on purpose to see which test failed, and wrote a boundary test myself. Both READMEs say the same.</p>
   </section>
 
   <section id="farm">
     <h2>Farm work</h2>
-    <div class="cards">
-      <article class="card">
+    <div class="row">
+      <p class="when">2026</p>
+      <div>
         <h3>AI dashboard for a dairy farm</h3>
-        <p class="meta">2026 · paid project · 6.5 days</p>
-        <p>Built a custom dashboard for a dairy farm in Tsitsikamma. AI is connected to the farm's Dropbox and Google Sheets, refreshes every Monday at 06:00, and managers can change it by giving plain-language instructions. It showed that feed demand was outrunning grass growth, which guided culling and feed purchases.</p>
-      </article>
-      <article class="card">
-        <h3>Farm worker &amp; IT support</h3>
-        <p class="meta">2023 to 2026 · about 3 months in total</p>
-        <p>Hands-on dairy work: pipe work, herding, basic construction and supply runs. On the IT side, the Excel milk-yield tracker and mounting a security camera at the feed store.</p>
-      </article>
-      <article class="card">
+        <p>A paid project of 6.5 days for a dairy farm in Tsitsikamma. The AI is connected to the farm's Dropbox and Google Sheets and refreshes the dashboard every Monday at 06:00. Managers change it by writing instructions in plain language. It showed that feed demand was outrunning grass growth, which guided decisions on culling and feed purchases.</p>
+      </div>
+    </div>
+    <div class="row">
+      <p class="when">2026</p>
+      <div>
         <h3>AI consulting session</h3>
-        <p class="meta">2026 · paid · 3 hours</p>
-        <p>A working session for a commercial farming business on using AI in their operation.</p>
-      </article>
+        <p>Three paid hours with a commercial farming business on using AI in their operation.</p>
+      </div>
+    </div>
+    <div class="row">
+      <p class="when">2023 to 2026</p>
+      <div>
+        <h3>Farm worker and IT support</h3>
+        <p>About three months in total of hands-on dairy work: pipe work, herding, basic construction and supply runs. On the IT side, the Excel milk tracker and a security camera mounted at the feed store.</p>
+      </div>
     </div>
   </section>
 
   <section id="study">
     <h2>Studies</h2>
-    <ul class="timeline">
-      <li><strong>BIT Honours, Information Systems</strong> · University of Pretoria · Jan to Nov 2026 (expected). Average 73%, with distinctions in HCI (83%) and Systems Development (75%). Research on explainable AI, cognitive load and trust in smart grids: a review of 49 studies plus 5 expert interviews.</li>
-      <li><strong>BIT Information Systems</strong> · University of Pretoria · 2023 to 2025, with distinction. Capstone mark 94%. With a team of five I built a platform for a production-house client (.NET Web API, SQL Server, TypeScript, Azure, blockchain certificates) and we won the overall prize plus four awards.</li>
-    </ul>
-    <h3 class="sub">Skills</h3>
-    <p class="chips"><span>C#</span><span>.NET Web API</span><span>TypeScript</span><span>SQL &amp; SQL Server</span><span>Azure</span><span>Excel</span><span>AI tools &amp; automation</span><span>English (fluent)</span><span>Afrikaans (fluent)</span></p>
+    <div class="row">
+      <p class="when">2026</p>
+      <div>
+        <h3>BIT Honours, Information Systems</h3>
+        <p>University of Pretoria, finishing November 2026. Average 73%, with distinctions in Human-Computer Interaction (83%) and Systems Development (75%). My research asks how explainable AI affects cognitive load and trust in smart grids: a review of 49 studies plus five expert interviews.</p>
+      </div>
+    </div>
+    <div class="row">
+      <p class="when">2023 to 2025</p>
+      <div>
+        <h3>BIT Information Systems</h3>
+        <p>Passed with distinction, 94% for the capstone. With a team of five I built a platform for a production company with .NET Web API, SQL Server, TypeScript, Azure and blockchain certificates. We won the overall prize and four category awards.</p>
+      </div>
+    </div>
+    <p class="skills"><strong>Tools I work with:</strong> C#, .NET Web API, TypeScript, SQL and SQL Server, Azure, Excel, and AI tools for automation.</p>
   </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>I'm looking for junior software and data roles in agri-tech, food or dairy, starting 2027, and I'm happy to relocate. I'm a South African citizen and would need work sponsorship.</p>
-    <p class="cta">
-      <a class="btn" href="mailto:michaelbutoi2004@gmail.com">michaelbutoi2004@gmail.com</a>
-      <a class="btn ghost" href="https://www.linkedin.com/in/michael-butoi-b47b2831a">LinkedIn</a>
-      <a class="btn ghost" href="https://github.com/michaelbutoi">GitHub</a>
-    </p>
-  </section>
 </main>
 
-<footer>© 2026 Michael Butoi · Pretoria, South Africa</footer>
+<section id="contact" class="contact">
+  <div class="contact-in">
+    <h2>Let's talk</h2>
+    <p>If your team builds software for farms, dairies or food, I'd like to hear about it.</p>
+    <a class="mail" href="mailto:michaelbutoi2004@gmail.com">michaelbutoi2004@gmail.com</a>
+    <p class="elsewhere"><a href="https://www.linkedin.com/in/michael-butoi-b47b2831a">LinkedIn</a> <a href="https://github.com/michaelbutoi">GitHub</a></p>
+  </div>
+  <p class="foot">Michael Butoi, Pretoria, South Africa</p>
+</section>
+
+<script src="script.js"></script>
 </body>
 </html>
