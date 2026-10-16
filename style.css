@@ -20,7 +20,7 @@ a:hover{color:var(--field)}
 
 /* header */
 .bar{display:flex;justify-content:space-between;align-items:baseline;gap:12px 28px;flex-wrap:wrap;padding:22px clamp(20px,5vw,64px);font-family:var(--display)}
-.name{font-weight:700;font-size:19px;text-decoration:none;letter-spacing:-.01em}
+.name{font-weight:700;font-size:clamp(1.9rem,4vw,2.8rem);line-height:1;letter-spacing:-.025em;text-decoration:none}
 .bar nav{display:flex;gap:26px;font-weight:500;font-size:16px}
 .bar nav a{text-decoration:none;color:var(--muted)}
 .bar nav a:hover{color:var(--ink);text-decoration:underline;text-decoration-color:var(--field);text-decoration-thickness:2px;text-underline-offset:6px}
@@ -54,9 +54,9 @@ h1{font:600 clamp(2.3rem,5vw,4.3rem)/1.04 var(--display);letter-spacing:-.025em;
 .field figcaption{font-size:14px;line-height:1.5;color:var(--muted);margin-top:12px;max-width:26em}
 
 /* about */
-.about{display:grid;grid-template-columns:minmax(150px,230px) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:start;padding:clamp(24px,4vw,48px) 0 clamp(56px,8vw,112px);border-top:1px solid var(--line)}
-.about img{width:100%;height:auto;display:block;border-radius:3px;margin-top:6px}
-.about p{margin:0 0 1em;max-width:36em;font-size:1.1rem}
+.about{display:block;text-align:center;padding:clamp(24px,4vw,48px) 0 clamp(56px,8vw,112px);border-top:1px solid var(--line)}
+.about img{width:min(100%,300px);height:auto;display:block;border-radius:3px;margin:0 auto 28px}
+.about p{margin:0 auto 1em;max-width:36em;font-size:1.1rem}
 
 /* section headings */
 h2{font:600 clamp(1.8rem,3.2vw,2.6rem)/1.1 var(--display);letter-spacing:-.02em;margin:0 0 clamp(24px,4vw,44px)}
@@ -64,15 +64,15 @@ h3{font:600 1.35rem/1.25 var(--display);letter-spacing:-.01em;margin:0 0 8px}
 #projects,#farm,#study{padding-bottom:clamp(56px,8vw,112px)}
 
 /* projects */
-.project{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:clamp(20px,4vw,56px);padding:clamp(28px,4vw,44px) 0;border-top:1px solid var(--ink)}
+.project{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(16px,3vw,28px);padding:clamp(28px,4vw,44px) 0;border-top:1px solid var(--ink)}
 .stack{margin:0 0 14px;color:var(--muted);font-size:.95rem}
 .links{display:flex;flex-wrap:wrap;gap:8px 22px;margin:0;font-family:var(--display);font-weight:600;font-size:16px}
 .p-body p{margin:0 0 1em;max-width:36em}
-.chart{margin:28px 0 0;max-width:460px}
+.chart{margin:4px 0 8px}
 .chart svg{width:100%;height:auto;display:block;overflow:visible}
 .chart figcaption{font-size:14px;line-height:1.5;color:var(--muted);margin-top:8px}
-.lbl{font:500 11px var(--display);fill:var(--muted)}
-.ink{fill:none;stroke:var(--ink);stroke-width:2.5;stroke-linejoin:round;stroke-linecap:round}
+.lbl{font:500 13px var(--display);fill:var(--muted)}
+.ink{fill:none;stroke:var(--ink);stroke-width:3;stroke-linejoin:round;stroke-linecap:round}
 .flagline,.demand{stroke:var(--field);stroke-width:1.5;stroke-dasharray:4 4}
 .dot{fill:var(--flag);stroke:var(--fog);stroke-width:2}
 .js .draw{stroke-dasharray:1;stroke-dashoffset:1}
