@@ -74,6 +74,28 @@
 
   <section id="projects">
     <h2>Projects</h2>
+    <article class="project">
+      <div class="p-head">
+        <h3>Paddock Watch</h3>
+        <p class="stack">TypeScript, Sentinel-2 satellite data, Leaflet, Vitest, GitHub Pages</p>
+        <p class="links"><a href="https://michaelbutoi.github.io/paddock-watch/">Live demo</a><a href="https://github.com/michaelbutoi/paddock-watch">Code on GitHub</a></p>
+      </div>
+      <div class="p-body">
+        <p>Draw a paddock on a map and see how its grass has been growing over the past months, worked out from free Sentinel-2 satellite images and daily weather. It runs entirely in the browser and downloads only the part of each image that covers the paddock.</p>
+        <p>It drops cloudy passes, rejects bad readings, flags grazing and cutting, and estimates growth in kg of dry matter per hectare per day. The example is a real year of data from a Waikato dairy paddock. It's an estimate, not farm advice.</p>
+        <figure class="chart" data-draw>
+          <svg viewBox="0 0 320 150" role="img" aria-label="Line chart: a year of satellite greenness readings for one paddock, near 0.9 most of the time, with sharp drops after grazing in November, June and September.">
+            <polyline class="draw ink" pathLength="1" points="12.0,26.8 24.2,28.8 36.4,28.4 47.0,92.8 51.0,68.5 55.1,51.0 56.7,48.2 59.2,39.5 97.4,42.8 121.8,42.4 124.2,35.9 134.0,47.2 138.0,48.6 148.6,39.9 166.5,26.0 168.9,28.0 170.6,33.4 173.0,26.5 181.1,23.3 182.8,24.5 185.2,22.8 186.8,25.0 190.9,25.1 195.0,31.5 201.5,28.5 203.1,27.1 213.7,27.4 217.7,70.0 219.4,75.3 221.8,70.2 229.9,50.5 235.6,47.9 242.1,33.2 243.8,36.6 247.8,35.7 250.3,29.8 260.0,25.7 264.1,29.1 272.2,30.4 274.7,24.4 282.8,51.0 299.1,28.3 300.7,30.3"/>
+            <circle class="dot" cx="47" cy="92.8" r="5.5"/>
+            <text x="56" y="104" class="lbl">grazed or cut</text>
+            <text x="12" y="140" class="lbl">Oct 2025</text>
+            <text x="308" y="140" text-anchor="end" class="lbl">Oct 2026</text>
+          </svg>
+          <figcaption>Real data: 43 clear satellite passes over one paddock in a year. Each sharp drop is a grazing or cut, and the grass recovers over the following weeks.</figcaption>
+        </figure>
+        <p class="honest">How it was built: I picked this project from a shortlist of ideas. AI designed and wrote the code, tests and documentation, and the README says so.</p>
+      </div>
+    </article>
 
     <article class="project">
       <div class="p-head">
@@ -122,7 +144,7 @@
       </div>
     </article>
 
-    <p class="honest">How they were built: I chose the problems and the rules, including the 15% and seven-day thresholds and SQL Server. AI wrote most of the code and tests. In each project I read through the core rule, broke it on purpose to see which test failed, and wrote a boundary test myself. Both READMEs say the same.</p>
+    <p class="honest">How Milk Yield Tracker and Feed vs Grass were built: I chose the problems and the rules, including the 15% and seven-day thresholds and SQL Server. AI wrote most of the code and tests. In each project I read through the core rule, broke it on purpose to see which test failed, and wrote a boundary test myself. Both READMEs say the same.</p>
   </section>
 
   <section id="farm">
