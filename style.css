@@ -19,8 +19,8 @@ a:hover{color:var(--field)}
 :focus-visible{outline:3px solid var(--field);outline-offset:3px;border-radius:2px}
 
 /* header */
-.bar{display:flex;justify-content:space-between;align-items:baseline;gap:12px 28px;flex-wrap:wrap;padding:22px clamp(20px,5vw,64px);font-family:var(--display)}
-.name{font-weight:700;font-size:19px;text-decoration:none;letter-spacing:-.01em}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:12px 28px;flex-wrap:wrap;padding:22px clamp(20px,5vw,64px);font-family:var(--display)}
+.name{font-weight:700;font-size:clamp(26px,3.2vw,40px);line-height:1.1;text-decoration:none;letter-spacing:-.01em}
 .bar nav{display:flex;gap:26px;font-weight:500;font-size:16px}
 .bar nav a{text-decoration:none;color:var(--muted)}
 .bar nav a:hover{color:var(--ink);text-decoration:underline;text-decoration-color:var(--field);text-decoration-thickness:2px;text-underline-offset:6px}
@@ -29,8 +29,8 @@ main{padding:0 clamp(20px,5vw,64px)}
 section{max-width:1160px;margin:0 auto}
 
 /* hero */
-.hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(28px,5vw,72px);align-items:center;padding:clamp(28px,6vw,72px) 0 clamp(40px,7vw,96px)}
-h1{font:600 clamp(2.3rem,5vw,4.3rem)/1.04 var(--display);letter-spacing:-.025em;margin:0 0 28px;max-width:15em;text-wrap:balance}
+.hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(28px,5vw,72px);align-items:center;padding:clamp(24px,4vw,48px) 0 clamp(32px,5vw,64px)}
+h1{font:600 clamp(1.3rem,2.2vw,1.75rem)/1.2 var(--display);letter-spacing:-.015em;margin:0 0 20px;max-width:15em;text-wrap:balance}
 .intro{max-width:34em;margin:0 0 32px;color:var(--muted);font-size:1.12rem}
 .actions{display:flex;gap:28px;align-items:center;flex-wrap:wrap;margin:0;font-family:var(--display);font-weight:600;font-size:17px}
 .primary{background:var(--ink);color:var(--fog);padding:13px 24px;border-radius:3px;text-decoration:none}
@@ -38,7 +38,7 @@ h1{font:600 clamp(2.3rem,5vw,4.3rem)/1.04 var(--display);letter-spacing:-.025em;
 .plain{color:var(--ink)}
 
 /* the field: one orchestrated moment */
-.field{margin:0}
+.field{margin:0;max-width:400px;justify-self:end}
 .paddock{aspect-ratio:1;background:
   repeating-linear-gradient(90deg,rgba(0,0,0,.035) 0 2px,transparent 2px 9px),var(--soil);
   border-radius:4px;position:relative;box-shadow:0 0 0 1px rgba(22,37,27,.25)}
@@ -62,6 +62,7 @@ h1{font:600 clamp(2.3rem,5vw,4.3rem)/1.04 var(--display);letter-spacing:-.025em;
 h2{font:600 clamp(1.8rem,3.2vw,2.6rem)/1.1 var(--display);letter-spacing:-.02em;margin:0 0 clamp(24px,4vw,44px)}
 h3{font:600 1.35rem/1.25 var(--display);letter-spacing:-.01em;margin:0 0 8px}
 #projects,#farm,#study{padding-bottom:clamp(56px,8vw,112px)}
+#study{padding-top:clamp(8px,2vw,24px)}
 
 /* projects */
 .project{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:clamp(20px,4vw,56px);padding:clamp(28px,4vw,44px) 0;border-top:1px solid var(--ink)}
@@ -86,6 +87,11 @@ h3{font:600 1.35rem/1.25 var(--display);letter-spacing:-.01em;margin:0 0 8px}
 .row:first-of-type{border-top:1px solid var(--ink)}
 .when{margin:4px 0 0;font:500 1rem var(--display);color:var(--muted)}
 .row p:not(.when){margin:0;max-width:38em}
+.marks{display:flex;flex-wrap:wrap;gap:14px 0;margin:10px 0 16px}
+.stat{display:flex;flex-direction:column;padding:0 22px;border-left:1px solid var(--line);max-width:13em}
+.stat:first-child{padding-left:0;border-left:0}
+.num{font:600 1.7rem/1.1 var(--display);letter-spacing:-.02em;color:var(--field)}
+.lab{font:500 .82rem/1.35 var(--display);color:var(--muted);margin-top:4px}
 .skills{border-top:1px solid var(--line);margin:0;padding-top:24px;max-width:40em}
 
 /* contact */
@@ -103,7 +109,7 @@ h3{font:600 1.35rem/1.25 var(--display);letter-spacing:-.01em;margin:0 0 8px}
 /* small screens */
 @media (max-width:820px){
   .hero{grid-template-columns:1fr}
-  .field{max-width:420px}
+  .field{max-width:420px;justify-self:start}
   .project,.row{grid-template-columns:1fr}
   .p-head{margin-bottom:6px}
 }
@@ -111,6 +117,7 @@ h3{font:600 1.35rem/1.25 var(--display);letter-spacing:-.01em;margin:0 0 8px}
   .about{grid-template-columns:1fr}
   .about img{max-width:220px}
   .bar nav{gap:18px}
+  .stat{padding:0 22px 0 0;border-left:0}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
